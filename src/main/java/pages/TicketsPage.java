@@ -6,14 +6,15 @@ import org.openqa.selenium.support.FindBy;
 
 public class TicketsPage extends AbstractPage {
 
+    @FindBy(xpath = "//*[@class=\"fas fa-pencil-alt\"]")
+    private WebElement editButton;
+
     public TicketsPage(WebDriver driver) {
         super(driver);
     }
 
-    @FindBy(xpath = "//*[@class=\"fas fa-pencil-alt\"]")
-    private WebElement editButton;
-        public TicketsPage editButtonClick() {
-            editButton.click();
+    public TicketsPage editButtonClick() {
+        editButton.click();
         return this;
     }
 

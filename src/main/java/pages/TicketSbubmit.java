@@ -6,6 +6,10 @@ import org.openqa.selenium.support.FindBy;
 
 public class TicketSbubmit extends AbstractPage {
     @FindBy(
+            xpath = "//*[@id=\"id_title\"]"
+    )
+    public WebElement titleField;
+    @FindBy(
             xpath = "//*[@id=\"id_queue\"]"
     )
     private WebElement queueDropDown;
@@ -13,10 +17,6 @@ public class TicketSbubmit extends AbstractPage {
             xpath = "//*[text()=\"Django Helpdesk\"]"
     )
     private WebElement djangoSelect;
-    @FindBy(
-            xpath = "//*[@id=\"id_title\"]"
-    )
-    public WebElement titleField;
     @FindBy(
             xpath = "//*[@id=\"id_body\"]"
     )
@@ -65,20 +65,22 @@ public class TicketSbubmit extends AbstractPage {
     }
 
     public TicketSbubmit titleFieldInput(String title) {
-        this.titleField.sendKeys(new CharSequence[]{title});
+        this.titleField.sendKeys(title);
         return this;
     }
 
     public String titleFieldGetAttribute() {
+
         return this.titleField.getAttribute("value");
     }
 
     public TicketSbubmit ticketDescriptionInput(String description) {
-        this.ticketDescription.sendKeys(new CharSequence[]{description});
+        this.ticketDescription.sendKeys(description);
         return this;
     }
 
     public String ticketDescriptionGetAttribute() {
+
         return this.ticketDescriptionAfterCreate.getAttribute("value");
     }
 
@@ -103,7 +105,7 @@ public class TicketSbubmit extends AbstractPage {
     }
 
     public TicketSbubmit emailFieldInput(String email) {
-        this.emailField.sendKeys(new CharSequence[]{email});
+        this.emailField.sendKeys(email);
         return this;
     }
 
