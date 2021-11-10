@@ -5,49 +5,27 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class TicketSbubmit extends AbstractPage {
-    @FindBy(
-            xpath = "//*[@id=\"id_title\"]"
-    )
+    @FindBy(xpath = "//*[@id=\"id_title\"]")
     public WebElement titleField;
-    @FindBy(
-            xpath = "//*[@id=\"id_queue\"]"
-    )
+    @FindBy(xpath = "//*[@id=\"id_queue\"]")
     private WebElement queueDropDown;
-    @FindBy(
-            xpath = "//*[text()=\"Django Helpdesk\"]"
-    )
+    @FindBy(xpath = "//*[text()=\"Django Helpdesk\"]")
     private WebElement djangoSelect;
-    @FindBy(
-            xpath = "//*[@id=\"id_body\"]"
-    )
+    @FindBy(xpath = "//*[@id=\"id_body\"]")
     private WebElement ticketDescription;
-    @FindBy(
-            xpath = "//*[@id=\"id_description\"]"
-    )
+    @FindBy(xpath = "//*[@id=\"id_description\"]")
     private WebElement ticketDescriptionAfterCreate;
-    @FindBy(
-            xpath = "//*[@id=\"id_priority\"]"
-    )
+    @FindBy(xpath = "//*[@id=\"id_priority\"]")
     private WebElement ticketPriority;
-    @FindBy(
-            xpath = "//*[text()=\"1. Critical\"]"
-    )
+    @FindBy(xpath = "//*[text()=\"1. Critical\"]")
     private WebElement criticalPriority;
-    @FindBy(
-            xpath = "//*[@id=\"id_due_date\"]"
-    )
+    @FindBy(xpath = "//*[@id=\"id_due_date\"]")
     private WebElement dueOnDropDown;
-    @FindBy(
-            xpath = "//*[@href=\"#\" and text()=\"20\"]"
-    )
+    @FindBy(xpath = "//*[@href=\"#\" and text()=\"20\"]")
     private WebElement dateTwoO;
-    @FindBy(
-            xpath = "//*[@id=\"id_submitter_email\"]"
-    )
+    @FindBy(xpath = "//*[@id=\"id_submitter_email\"]")
     private WebElement emailField;
-    @FindBy(
-            xpath = "//*[@type=\"submit\"]"
-    )
+    @FindBy(xpath = "//*[@type=\"submit\"]")
     private WebElement submitButton;
 
     public TicketSbubmit(WebDriver driver) {
@@ -70,7 +48,6 @@ public class TicketSbubmit extends AbstractPage {
     }
 
     public String titleFieldGetAttribute() {
-
         return this.titleField.getAttribute("value");
     }
 
@@ -80,7 +57,6 @@ public class TicketSbubmit extends AbstractPage {
     }
 
     public String ticketDescriptionGetAttribute() {
-
         return this.ticketDescriptionAfterCreate.getAttribute("value");
     }
 
@@ -112,7 +88,6 @@ public class TicketSbubmit extends AbstractPage {
     public String emailFieldGetAttribute() {
         return this.emailField.getAttribute("value");
     }
-
     public TicketSbubmit submitButtonClick() {
         this.submitButton.click();
         return this;
